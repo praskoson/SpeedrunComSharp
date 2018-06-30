@@ -117,9 +117,7 @@ namespace SpeedrunComSharp
 
         public DynamicJsonObject(IDictionary<string, object> dictionary)
         {
-            if (dictionary == null)
-                throw new ArgumentNullException("dictionary");
-            _dictionary = dictionary;
+            _dictionary = dictionary ?? throw new ArgumentNullException("dictionary");
         }
 
         public override string ToString()
